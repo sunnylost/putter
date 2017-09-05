@@ -190,17 +190,29 @@ class Updater extends EventEmitter {
                                 updated.push( {
                                     name  : name,
                                     cur   : prevVersion,
-                                    newest: version
+                                    latest: version
                                 } )
                             }
                         } )
+
+                        return updated
                     } )
-                    .then( () => {
-                        //Save
-                        fs.writeFileSync( this.pkgPath,
-                            isJSONFile ? JSON.stringify( dependenciesData.source, null, 4 ) : dependenciesData.source.join( '\n' )
-                        )
+                    .then( ( updated ) => {
+                        if ( this.opts.output ) {
+                            updated.forEach( ( pkg ) => {
+                                console.log( 'Name:', pkg.name, ' Current:', pkg.cur, ' Latest:', pkg.latest )
+                            } )
+                        } else {
+                            fs.writeFileSync( this.pkgPath,
+                                isJSONFile ? JSON.stringify( dependenciesData.source, null, 4 ) : dependenciesData.source.join( '\n' )
+                            )
+                        }
+
                         this.emit( 'end' )
+                    } )
+                    .catch( ( e ) => {
+                        this.emit( 'end', e )
+                        console.log( e )
                     } )
             }
         )
