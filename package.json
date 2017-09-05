@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sunnylost/update-pkg.git"
+    "url": "git+https://github.com/sunnylost/putter.git"
   },
   "author": "sunnylost",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sunnylost/update-pkg/issues"
+    "url": "https://github.com/sunnylost/putter/issues"
   },
-  "homepage": "https://github.com/sunnylost/update-pkg#readme",
+  "homepage": "https://github.com/sunnylost/putter#readme",
   "dependencies": {
     "got": "^7.1.0",
     "log-update": "^2.1.0"
