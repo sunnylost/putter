@@ -1,0 +1,23 @@
+{
+  "name": "putter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunnylost/update-pkg.git"
+  },
+  "author": "sunnylost",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunnylost/update-pkg/issues"
+  },
+  "homepage": "https://github.com/sunnylost/update-pkg#readme",
+  "dependencies": {
+    "got": "^7.1.0",
+    "log-update": "^2.1.0"
+  }
+}
